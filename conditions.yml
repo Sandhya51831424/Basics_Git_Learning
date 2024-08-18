@@ -1,0 +1,13 @@
+---
+- hosts: demo
+  connection: ssh
+  user: ansible
+  become: yes
+  gather_facts: yes
+  tasks:
+    - name: install the apache on ubuntu
+      command: apt-get -y install apache2 
+      when: ansible_os_family=="Debian"
+    - name: install webserver on linux
+      command: yum -y install httpd
+      when: ansible_os_family=="RedHat"

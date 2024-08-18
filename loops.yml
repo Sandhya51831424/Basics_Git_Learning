@@ -1,0 +1,13 @@
+---
+- hosts: demo
+  connection: ssh
+  become: yes
+  user: ansible
+  tasks:
+    - name: items in loop
+      user: name='{{item}}' state=present
+      with_items:
+        - bhupi
+        - rajith
+        - vasco
+          

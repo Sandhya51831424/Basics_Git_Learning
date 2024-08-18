@@ -1,0 +1,2 @@
+- name: install httpd 
+  action: yum name=httpd state=present
